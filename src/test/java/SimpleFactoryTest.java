@@ -1,7 +1,7 @@
 import com.coderknock.sanchan.factory.simplefactory.CrawlerFactory;
 
 /**
- * <p>简单工厂设计模式</p>
+ * <p>简单工厂设计模式、单例模式</p>
  *
  * @author 三产
  * @version 1.0
