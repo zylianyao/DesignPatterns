@@ -7,6 +7,7 @@ import jodd.util.ClassLoaderUtil;
 import jodd.util.StringUtil;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
 /**
@@ -34,7 +35,7 @@ public class CrawlerFactory {
      */
     static {
         try {
-            props.load(CrawlerFactory.class.getClassLoader().getResourceAsStream("crawler.props"));
+            props.load(com.coderknock.sanchan.factory.factorymethod.CrawlerFactory.class.getClassLoader().getResourceAsStream("crawler.props"));
         } catch (IOException ioException) {
             ioException.printStackTrace();
             System.err.println("初始化失败");
@@ -61,11 +62,17 @@ public class CrawlerFactory {
                 try {
                     Crawler crawlerObject = (Crawler) ClassLoaderUtil.loadClass("com.coderknock.sanchan.factory.impl." + className).getConstructor(String.class).newInstance(url);
                     return crawlerObject;
-                } catch (Exception e) {
+                } catch (InstantiationException e) {
                     e.printStackTrace();
-                    System.err.println("获取爬虫失败");
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
                 }
-
             }
         }
         return null;
