@@ -2,7 +2,7 @@ package com.coderknock.sanchan.factory.factorymethod.impl;
 
 import com.coderknock.sanchan.factory.Crawler;
 import com.coderknock.sanchan.factory.factorymethod.CrawlerFactory;
-import com.coderknock.sanchan.factory.impl.CrawlerSegmentFault;
+import com.coderknock.sanchan.factory.impl.CrawlerSegmentFaultArticle;
 
 /**
  * <p></p>
@@ -19,6 +19,6 @@ public class CrawlerSegmentFaultFactory extends CrawlerFactory {
 
     @Override
     public Crawler getCrawler(String url) {
-        return new CrawlerSegmentFault(url);
+        return new CrawlerSegmentFaultArticle(url);
     }
 }

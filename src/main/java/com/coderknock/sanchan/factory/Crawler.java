@@ -1,8 +1,6 @@
 package com.coderknock.sanchan.factory;
 
-import com.coderknock.sanchan.factory.pojo.CrawlerResult;
-import jodd.http.HttpRequest;
-import jodd.http.HttpResponse;
+import com.coderknock.sanchan.factory.pojo.Article;
 import jodd.jerry.Jerry;
 
 /**
@@ -17,27 +15,18 @@ import jodd.jerry.Jerry;
  * @since JDK 1.8
  */
 public abstract class Crawler {
-    private String url;
+    protected String url;
 
     public Crawler(String url) {
         this.url = url;
     }
 
-    public void crawler() {
-        System.out.println("===========正在爬取" + url + " ==========");
-        //使用 jodd http 获取网站数据
-        HttpResponse response = HttpRequest.get(url).timeout(10000).send();
-        //将网站的数据转为可以进行进一步分析的 Jerry 对象
-        Jerry jerry = Jerry.jerry(response.bodyText());
-        //将 jerry 传入子类实现的  execute 方法，具体操作由子类决定之后返回爬取到的数据
-        System.out.println(execute(jerry));
-        System.out.println("===========爬取完成" + url + "==========");
-    }
+    public abstract void crawler();
 
     /**
      * 具体的爬取逻辑由子类具体实现
      *
      * @return
      */
-    protected abstract CrawlerResult execute(Jerry jerry);
+    protected abstract Article execute(Jerry jerry);
 }

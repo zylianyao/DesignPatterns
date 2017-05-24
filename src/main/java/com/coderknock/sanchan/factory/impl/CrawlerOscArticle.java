@@ -1,7 +1,8 @@
 package com.coderknock.sanchan.factory.impl;
 
 import com.coderknock.sanchan.factory.Crawler;
-import com.coderknock.sanchan.factory.pojo.CrawlerResult;
+import com.coderknock.sanchan.factory.CrawlerArticle;
+import com.coderknock.sanchan.factory.pojo.Article;
 import jodd.jerry.Jerry;
 
 /**
@@ -15,13 +16,13 @@ import jodd.jerry.Jerry;
  * @copyright Copyright 2017 拿客 coderknock.com  All rights reserved.
  * @since JDK 1.8
  */
-public class CrawlerOscBlog extends Crawler {
+public class CrawlerOscArticle extends CrawlerArticle {
 
-    public CrawlerOscBlog(String url) {
+    public CrawlerOscArticle(String url) {
         super(url);
     }
 
-    protected CrawlerResult execute(Jerry jerry) {
+    protected Article execute(Jerry jerry) {
         //获取标题所在的元素
         Jerry titleJerry = jerry.find(".blog-heading .title");
         titleJerry.find("span").remove();
@@ -49,6 +50,6 @@ public class CrawlerOscBlog extends Crawler {
             );
             content = contentJerry.html();
         }
-        return new CrawlerResult(title, content);
+        return new Article(title, content);
     }
 }

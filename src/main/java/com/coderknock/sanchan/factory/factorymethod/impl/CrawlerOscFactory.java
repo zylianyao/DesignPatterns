@@ -2,7 +2,7 @@ package com.coderknock.sanchan.factory.factorymethod.impl;
 
 import com.coderknock.sanchan.factory.Crawler;
 import com.coderknock.sanchan.factory.factorymethod.CrawlerFactory;
-import com.coderknock.sanchan.factory.impl.CrawlerOscBlog;
+import com.coderknock.sanchan.factory.impl.CrawlerOscArticle;
 
 /**
  * <p></p>
@@ -19,6 +19,6 @@ public class CrawlerOscFactory extends CrawlerFactory {
 
     @Override
     public Crawler getCrawler(String url) {
-        return new CrawlerOscBlog(url);
+        return new CrawlerOscArticle(url);
     }
 }

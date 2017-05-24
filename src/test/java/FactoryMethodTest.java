@@ -20,7 +20,7 @@ import java.lang.reflect.InvocationTargetException;
  * @since JDK 1.8
  */
 public class FactoryMethodTest {
-    //获取配置爬虫与网站的关联关系
+    //获取配置爬虫工厂与网站的关联关系
     private static final Props props = new Props();
 
     /**

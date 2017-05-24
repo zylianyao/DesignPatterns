@@ -1,7 +1,7 @@
 package com.coderknock.sanchan.factory.pojo;
 
 /**
- * <p>爬取结果实体类</p>
+ * <p>文章（爬取结果）实体类</p>
  *
  * @author 三产
  * @version 1.0
@@ -11,14 +11,14 @@ package com.coderknock.sanchan.factory.pojo;
  * @copyright Copyright 2017 拿客 coderknock.com  All rights reserved.
  * @since JDK 1.8
  */
-public class CrawlerResult {
+public class Article {
 
     //文章标题
     private String title;
     //文章的内容
     private String htmlContent;
 
-    public CrawlerResult(String title, String htmlContent) {
+    public Article(String title, String htmlContent) {
         this.title = title;
         this.htmlContent = htmlContent;
     }

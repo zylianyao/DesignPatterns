@@ -1,7 +1,8 @@
 package com.coderknock.sanchan.factory.impl;
 
 import com.coderknock.sanchan.factory.Crawler;
-import com.coderknock.sanchan.factory.pojo.CrawlerResult;
+import com.coderknock.sanchan.factory.CrawlerArticle;
+import com.coderknock.sanchan.factory.pojo.Article;
 import jodd.jerry.Jerry;
 
 /**
@@ -15,19 +16,19 @@ import jodd.jerry.Jerry;
  * @copyright Copyright 2017 拿客 coderknock.com  All rights reserved.
  * @since JDK 1.8
  */
-public class CrawlerSegmentFault extends Crawler {
+public class CrawlerSegmentFaultArticle extends CrawlerArticle {
 
-    public CrawlerSegmentFault(String url) {
+    public CrawlerSegmentFaultArticle(String url) {
         super(url);
     }
 
     @Override
-    protected CrawlerResult execute(Jerry jerry) {
+    protected Article execute(Jerry jerry) {
         //文章内容
         Jerry blogContentJerry = jerry.find(".article__content");
         //文章标题
         String title = jerry.find("#articleTitle a").text().trim();
-        return new CrawlerResult(title, blogContentJerry.html());
+        return new Article(title, blogContentJerry.html());
     }
 
 }
