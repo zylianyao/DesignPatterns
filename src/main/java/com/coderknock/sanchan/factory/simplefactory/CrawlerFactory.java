@@ -1,5 +1,6 @@
 package com.coderknock.sanchan.factory.simplefactory;
 
+import com.coderknock.sanchan.factory.Crawler;
 import jodd.http.HttpRequest;
 import jodd.props.Props;
 import jodd.util.ClassLoaderUtil;
@@ -58,7 +59,7 @@ public class CrawlerFactory {
                 return crawlerObjectMap.get(className);
             } else {
                 try {
-                    Crawler crawlerObject = (Crawler) ClassLoaderUtil.loadClass("com.coderknock.sanchan.factory.simplefactory.impl." + className).getConstructor(String.class).newInstance(url);
+                    Crawler crawlerObject = (Crawler) ClassLoaderUtil.loadClass("com.coderknock.sanchan.factory.impl." + className).getConstructor(String.class).newInstance(url);
                     return crawlerObject;
                 } catch (Exception e) {
                     e.printStackTrace();

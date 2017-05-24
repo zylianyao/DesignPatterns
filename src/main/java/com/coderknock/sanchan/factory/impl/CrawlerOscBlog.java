@@ -1,7 +1,7 @@
-package com.coderknock.sanchan.factory.simplefactory.impl;
+package com.coderknock.sanchan.factory.impl;
 
-import com.coderknock.sanchan.factory.simplefactory.Crawler;
-import com.coderknock.sanchan.factory.simplefactory.pojo.CrawlerResult;
+import com.coderknock.sanchan.factory.Crawler;
+import com.coderknock.sanchan.factory.pojo.CrawlerResult;
 import jodd.jerry.Jerry;
 
 /**

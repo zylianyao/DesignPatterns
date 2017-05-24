@@ -1,6 +1,6 @@
-package com.coderknock.sanchan.factory.simplefactory;
+package com.coderknock.sanchan.factory;
 
-import com.coderknock.sanchan.factory.simplefactory.pojo.CrawlerResult;
+import com.coderknock.sanchan.factory.pojo.CrawlerResult;
 import jodd.http.HttpRequest;
 import jodd.http.HttpResponse;
 import jodd.jerry.Jerry;

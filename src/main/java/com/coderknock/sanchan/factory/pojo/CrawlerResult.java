@@ -1,4 +1,4 @@
-package com.coderknock.sanchan.factory.simplefactory.pojo;
+package com.coderknock.sanchan.factory.pojo;
 
 /**
  * <p>爬取结果实体类</p>
