@@ -2,3 +2,8 @@
 .gitignore
 .idea/
 DesignPatterns.iml
+.classpath
+.project
+.settings/
+.vscode/
+target/
